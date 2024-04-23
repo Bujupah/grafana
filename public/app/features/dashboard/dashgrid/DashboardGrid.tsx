@@ -274,6 +274,7 @@ export class DashboardGrid extends PureComponent<Props, State> {
         isEditing={panel.isEditing}
         isViewing={panel.isViewing}
         isDraggable={isDraggable}
+        lazy={false}
         width={width}
         height={height}
         hideMenu={this.props.hidePanelMenus}

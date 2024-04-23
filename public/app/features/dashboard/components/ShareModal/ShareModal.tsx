@@ -14,6 +14,7 @@ import { ShareEmbed } from './ShareEmbed';
 import { ShareExport } from './ShareExport';
 import { ShareLibraryPanel } from './ShareLibraryPanel';
 import { ShareLink } from './ShareLink';
+import { ShareReport } from './ShareReport';
 import { ShareSnapshot } from './ShareSnapshot';
 import { ShareModalTabModel } from './types';
 import { shareDashboardType } from './utils';
@@ -53,6 +54,15 @@ function getTabs(panel?: PanelModel, activeTab?: string) {
       label: exportLabel,
       value: shareDashboardType.export,
       component: ShareExport,
+    });
+    tabs.push(...customDashboardTabs);
+
+
+    const downloadLabel = t('share-modal.tab-title.download', 'Report');
+    tabs.push({
+      label: downloadLabel,
+      value: shareDashboardType.report,
+      component: ShareReport,
     });
     tabs.push(...customDashboardTabs);
   }
